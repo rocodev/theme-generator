@@ -12,8 +12,9 @@ task :clear do
     next
   end
 
+  push_testing = `git cherry -v origin/master`
 
-  if /Everything up-to-date/ !~ `git push --dry-run`
+  if push_testing.length > 0
     puts "Some commits not push, pleast push it first"
     next
   end
