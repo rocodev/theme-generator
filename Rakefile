@@ -1,5 +1,5 @@
 source_dir      = "source"    # source file directory
-public_dir      = "public"    # source file directory
+public_dir      = "public"    # public file directory
 
 
 
