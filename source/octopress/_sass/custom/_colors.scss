@@ -41,3 +41,19 @@
 //$pre-bg: $base03;
 //$pre-border: darken($base02, 5);
 //$pre-color: $base1;
+
+
+// logdown overide
+strong.highlight {
+  color: #c00;
+  font-weight: bold;
+  background: none;
+  border: none !important;
+}
+
+
+
+
+
+
+
