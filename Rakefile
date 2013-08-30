@@ -33,7 +33,7 @@ task :deploy do
   push_testing = `git diff --stat origin/master`
 
   if push_testing.length > 0
-    puts "Some commits not push, pleast push it first"
+    puts "Some commits not push, please push it first"
     next
   end
 
