@@ -3,13 +3,9 @@
 ## Install
 
 ``` bash
-
 git clone 
-
 bundle install
-
 rake setup_github_pages
-
 ```
 
 ## Folder & Convention
@@ -26,7 +22,6 @@ rake setup_github_pages
         ├── stylesheets
         ├── _sass    # Placing your sass file here, will compiling to public/your_theme/stylesheets
         ├── index.liquid
-
 ```
 
 
@@ -35,25 +30,18 @@ rake setup_github_pages
 ## Compile source to public
 
 ``` bash
-
 rake generate
-
 ```
 
 ## Preview Result
 
 ``` bash
-
 powder link
-
 powder open
-
 ```
 
 ## Deploy
 
 ```bash
-
 rake deploy
-
 ```
