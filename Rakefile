@@ -8,12 +8,15 @@ repo_url = "git@github.com:logdown/themes.git"
 
 task :clear do
   if /nothing to commit/ !~ `git status`
-    puts "Directory not clean, please commit and push first"
+    puts "Directory not clean, please commit and push it first"
     next
   end
 
 
-
+  if /Everything up-to-date/ !~ `git push --dry-run`
+    puts "Some commits not push, pleast push it first"
+    next
+  end
 
 end
 
