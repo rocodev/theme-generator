@@ -6,6 +6,18 @@ repo_url = "git@github.com:logdown/themes.git"
 
 
 
+task :clear do
+  if /nothing to commit/ !~ `git status`
+    puts "Directory not clean, please commit and push first"
+    next
+  end
+
+
+
+
+end
+
+
 
 
 task :generate do
