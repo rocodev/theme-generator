@@ -44,6 +44,8 @@ task :deploy do
 
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
 
+  Rake::Task[:generate].execute
+
   cp_r "#{public_dir}/.", deploy_dir
 
   cd "#{deploy_dir}" do
