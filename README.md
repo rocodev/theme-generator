@@ -25,7 +25,7 @@ If the name of your theme is valid, then you will see the new theme `./source/th
 
 ### Step2. Edit theme
 
-After the theme was created. Your will see folder and files like below:
+After the theme was created. Your will see folders and files like below:
 
 ```
 .
@@ -39,21 +39,23 @@ After the theme was created. Your will see folder and files like below:
         ├── index.liquid
 ```
 
-You can put fonts, images, javascripts and stylesheets to the folders just like the folder name.
+You can put fonts, images, javascripts and stylesheets to the folders just like the folder names.
 
 If you have `scss` file like `screen.scss` put it to the `_sass` folder: `./source/your_theme/_sass/screen.scss`,
-and the next step it will compiled to `./public/your_theme/stylesheets/screen.css`.
+and in the next step it will compiled to `./public/your_theme/stylesheets/screen.css`.
 
 
 
 
 ### Step3. Compile source to public
 
+Generate theme form source is quite simple, just type:
+
 ``` bash
 $ rake generate
 ```
 
-## Preview Result
+### Step4. Preview Result
 
 If you are using pow:
 
@@ -66,9 +68,9 @@ Open your browser and type the url: `http://theme_generator.dev/your_theme/style
 then you can see the compiled css file.
 
 
-### Step4. Deploy
+### Step5. Deploy
 
-Before deploy, remember to commit and push to master.
+Before deploy, remember to commit and push it to master.
 
 ```bash
 $ git add .
@@ -78,7 +80,7 @@ $ rake deploy
 ```
 
 After deploy, your theme baseurl will be at `ttp://cdn-theme.logdown.io/your_theme/`
-REMEMBER to edit index.rb to using the url.
+REMEMBER to edit index.liquid to using the url.
 
 
 ## Folders
