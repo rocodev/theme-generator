@@ -80,6 +80,7 @@ $ rake deploy
 ```
 
 After deploy, your theme baseurl will be at `ttp://cdn-theme.logdown.io/your_theme/`
+
 REMEMBER to edit index.liquid to using the url.
 
 
