@@ -39,7 +39,7 @@ After the theme was created. Your will see folders and files like below:
         ├── index.liquid
 ```
 
-You can put fonts, images, javascripts and stylesheets to the folders just like the folder names.
+You can put fonts, images, javascripts and stylesheets to the folders just like the folder name.
 
 If you have `scss` file like `screen.scss` put it to the `_sass` folder: `./source/your_theme/_sass/screen.scss`,
 and in the next step it will compiled to `./public/your_theme/stylesheets/screen.css`.
