@@ -12,7 +12,7 @@ rake setup_github_pages
 
 ```
 .
-├── deploy    # For github deploy, don't directly edit it.
+├── _deploy    # For github deploy, don't directly edit it.
 ├── public    # For github deploy, don't directly edit it.
 ├── source    # Edit you templates here
     ├── your_theme

@@ -1,6 +1,6 @@
 source_dir      = "source"    # source file directory
 public_dir      = "public"    # public file directory
-deploy_dir      = "deploy"    # build file directory
+deploy_dir      = "_deploy"    # deploy file directory
 repo_url = "git@github.com:logdown/themes.git"
 
 
