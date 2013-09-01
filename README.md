@@ -89,7 +89,7 @@ REMEMBER to edit index.liquid to using the url.
 ```
 .
 ├── _deploy    # For github deploy, don't directly edit it.
-├── public    # For github deploy, don't directly edit it.
+├── public    # For pow preview, don't directly edit it.
 ├── source
     ├── your_theme
         ├── font
