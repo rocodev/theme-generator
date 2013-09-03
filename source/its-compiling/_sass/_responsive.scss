@@ -1,0 +1,60 @@
+@media screen and (max-width: 580px) {
+  // Extend max-width if default nav items increases
+  .header {
+    .nav {
+      max-width: 100%;
+      text-align: center;
+      margin-top: 0;
+      float: none;
+      clear: both;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .wrapper {
+    font-size: .9em;
+  }
+  .header {
+    margin-top: 1.5em;
+
+    .logo, .nav, .search {
+      float: none;
+    }
+    .logo, .search .search-box {
+      width: 30em;
+    }
+    .logo {
+      margin: 2em auto;
+      //@include transform(none);
+
+      span.tagline {
+        font-size: 1.2em;
+      }
+    }
+    .search {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .header {
+    .logo, .search .search-box {
+      width: 100%;
+      @include box-sizing(border-box);
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    font-size: .8em;
+  }
+  .header {
+    .logo {
+      font-size: 1.1em;
+    }
+  }
+}
