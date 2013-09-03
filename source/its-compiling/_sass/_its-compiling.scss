@@ -21,9 +21,9 @@ body {
 }
 
 .wrapper {
-  max-width: 58em;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 20px;
 }
 
 a {
@@ -217,24 +217,39 @@ table.highlight {
 .pull-left { float: left; }
 .pull-right { float: right; }
 
+.group:before, .group:after {
+   content: "";
+   display: table;
+}
+.group:after {
+   clear: both;
+}
+.group {
+   zoom: 1; /* IE6&7 */
+}
+
 // header
 .header {
+  @extend .group;
   width: 100%;
-  margin: 3em auto;
+  margin: 3em auto 1.5em;
   text-transform: uppercase;
   font-weight: bold;
   a {
     border: 0;
   }
   div, nav {
-    @include inline-block;
     text-align: center;
   }
   .logo {
     width: 21em;
-    margin-left: 1em;
+    min-height: 50px;
     color: darken(white, 57%);
+    margin: 0 1em 1.5em;
+    float: left;
+
     @include transform(rotate(-2.5deg));
+
     h1 {
       font-size: 2.55em;
     }
@@ -243,10 +258,11 @@ table.highlight {
     }
   }
   .nav {
-    width: 24.5em;
+    max-width: 380px;
     text-align: right;
     vertical-align: top;
     margin-top: -6px;
+    float: right;
 
     li {
       width: 3.5em;
@@ -287,6 +303,8 @@ table.highlight {
     float:right;
     width: 10em;
     text-align: right;
+    margin-bottom: 16px;
+
     .search-box {
       @include border-radius(1em);
       text-align: left;
