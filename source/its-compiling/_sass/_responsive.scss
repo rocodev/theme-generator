@@ -39,11 +39,23 @@
   }
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 480px) {
   .header {
     .logo, .search .search-box {
       width: 100%;
       @include box-sizing(border-box);
+    }
+  }
+  .content {
+    .post {
+      padding: 20px;
+
+      .rel-date {
+        float: none;
+      }
+      .title h2 {
+        font-size: 1.5em;
+      }
     }
   }
 }

@@ -470,6 +470,9 @@ table.highlight {
           margin: 0 1.25em;
         }
       }
+      iframe {
+        max-width: 100%;
+      }
     }
     .tags {
       @include float-left;
