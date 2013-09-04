@@ -59,7 +59,10 @@
   .content {
     .post {
       padding: 20px;
-      -webkit-text-size-adjust: 110%;
+
+      &, .gist-syntax {
+        -webkit-text-size-adjust: 110%;
+      }
 
       .rel-date {
         float: none;
@@ -88,6 +91,10 @@
     .post {
       padding: 15px;
       -webkit-text-size-adjust: auto;
+
+      .gist-syntax {
+        -webkit-text-size-adjust: 100%;
+      }
     }
   }
 }
