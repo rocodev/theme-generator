@@ -15,10 +15,23 @@ task :generate do
         " --sass-dir #{SourceDir}/#{theme}/_sass" +
         " --images-dir #{PublicDir}/#{theme}/images" +
         " --fonts-dir #{PublicDir}/#{theme}/fonts" +
-        " --relative-assets" + 
+        " --relative-assets" +
         " --output-style compressed"
     end
-  end 
+  end
+end
+
+task :watch, :theme do |t, args|
+  theme = args[:theme]
+
+  if File.directory?("#{SourceDir}/#{theme}") && !(theme =='.' || theme == '..')
+    puts "Watching Theme: #{theme}\n"
+    system "compass watch --css-dir #{PublicDir}/#{theme}/stylesheets" +
+      " --sass-dir #{SourceDir}/#{theme}/_sass" +
+      " --images-dir #{PublicDir}/#{theme}/images" +
+      " --fonts-dir #{PublicDir}/#{theme}/fonts" +
+      " --relative-assets"
+  end
 end
 
 
@@ -29,14 +42,14 @@ task :new do |t, args|
   name = theme_name_sanitize(name)
 
   if !validate_theme_name(name)
-    abort "invalid theme name: #{name}" 
+    abort "invalid theme name: #{name}"
   end
 
   puts "Creating new theme: #{name}"
 
   mkdir "#{SourceDir}/#{name}"
 
-  cd "#{SourceDir}/#{name}" do 
+  cd "#{SourceDir}/#{name}" do
     mkdir "images"
     mkdir "javascripts"
     mkdir "stylesheets"
@@ -65,7 +78,7 @@ task :deploy do
   end
 
 
-  cd DeployDir do 
+  cd DeployDir do
     system "git pull"
   end
 
