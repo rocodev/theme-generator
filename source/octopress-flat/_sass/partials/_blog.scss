@@ -1,6 +1,6 @@
 article {
   padding-top: 1em;
-  a { 
+  a {
     @extend .force-wrap;
     text-decoration: none;
    }
@@ -10,7 +10,10 @@ article {
     padding-bottom: 1em;
     margin-bottom: 1em;
     background: $img-border bottom left repeat-x;
-    h1 {
+    .entry-title {
+      @extend h1;
+    }
+    h1, .entry-title {
       margin: 0;
       a { text-decoration: none;
         &:hover { text-decoration: underline; } }
@@ -97,12 +100,12 @@ article + article {
   article header { background: none; padding-bottom: 0; }
   article h1 {
     font-size: 2em;
-    a { 
+    a {
       color: inherit;
-      &:hover { 
+      &:hover {
         color: $darkBrick;
         text-decoration: none;
-      } 
+      }
     }
   }
   a[rel=full-article] {
