@@ -95,6 +95,9 @@
       }
     }
   }
+  .footer {
+    -webkit-text-size-adjust: 110%;
+  }
   body > iframe[src^="http://logdown"] {
     position: absolute !important;
   }
@@ -119,5 +122,8 @@
         -webkit-text-size-adjust: 100%;
       }
     }
+  }
+  .footer {
+    -webkit-text-size-adjust: 100%;
   }
 }
