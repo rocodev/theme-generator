@@ -73,6 +73,26 @@
         font-size: 1.5em;
         line-height: 1.3em;
       }
+
+      .tags, .metadata {
+        width: 100%;
+        font-size: 100%;
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .metadata {
+        margin-top: 10px;
+
+        li {
+          display: block;
+          margin-top: 10px;
+        }
+        li + li {
+          margin-left: 0;
+        }
+      }
     }
   }
 }
