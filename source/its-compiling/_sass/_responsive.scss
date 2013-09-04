@@ -39,7 +39,10 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+// iPhone in horizontal mode
+@media (max-width: 568px) and (-webkit-min-device-pixel-ratio: 1.5),
+       (max-width: 568px) and (min-resolution: 192dpi*0.75 ),
+       screen and (max-width: 480px) {
   .header {
     .search .search-box {
       width: 100%;
@@ -56,12 +59,16 @@
   .content {
     .post {
       padding: 20px;
+      -webkit-text-size-adjust: 110%;
 
       .rel-date {
         float: none;
+        display: block;
+        margin-bottom: 0.5em;
       }
       .title h2 {
         font-size: 1.5em;
+        line-height: 1.3em;
       }
     }
   }
@@ -69,18 +76,18 @@
 
 @media screen and (max-width: 400px) {
   .wrapper {
-    font-size: .85em;
     padding: 0 10px;
   }
   .header {
     .logo {
       width: 100%;
-      font-size: 1.1em;
+      font-size: 1em;
     }
   }
   .content {
     .post {
       padding: 15px;
+      -webkit-text-size-adjust: auto;
     }
   }
 }
