@@ -126,7 +126,8 @@ task :deploy_s3 do
   config = {
     "s3_id"     => Setting["s3_id"],
     "s3_secret" => Setting["s3_secret"],
-    "s3_bucket" => Setting["s3_bucket"]
+    "s3_bucket" => Setting["s3_bucket"],
+    "s3_endpoint" => "ap-northeast-1"
   }
   is_headless = true
 
