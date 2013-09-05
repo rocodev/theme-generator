@@ -71,7 +71,7 @@ end
 
 
 
-task :deploy do
+task :deploy_github do
   if /nothing to commit/ !~ `git status`
     abort "Directory not clean, please commit and push it first"
   end
@@ -107,7 +107,7 @@ task :deploy do
 end
 
 
-task :deploy_s3 do
+task :deploy do
   if /nothing to commit/ !~ `git status`
     abort "Directory not clean, please commit and push it first"
   end
