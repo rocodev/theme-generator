@@ -6,7 +6,14 @@
 $ git clone git@github.com:rocodev/theme-generator.git
 $ cd theme-generator
 $ bundle install
-$ rake setup_github_pages
+```
+
+copy config.example.yml to config.yml, and edit the keys.
+
+```
+s3_id: xxx
+s3_secret: xxx
+s3_bucket: cdn-theme.logdown.io
 ```
 
 ## Working flow
