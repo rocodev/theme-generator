@@ -1,3 +1,10 @@
+require 's3_website'
+require 'yaml'
+
+
+Setting = YAML.load_file('config.yml')
+
+
 SourceDir      = "source"    # source file directory
 PublicDir      = "public"    # public file directory
 DeployDir      = "_deploy"    # deploy file directory
@@ -98,6 +105,27 @@ task :deploy do
     puts "\n## Github Pages deploy complete"
   end
 end
+
+
+task :deploy_s3 do
+
+  config = {
+    "s3_id"     => Setting["s3_id"],
+    "s3_secret" => Setting["s3_secret"],
+    "s3_bucket" => Setting["s3_bucket"]
+  }
+  is_headless = true
+
+  S3Website::Uploader.run('./public', config, is_headless)
+
+
+end
+
+
+
+
+
+
 
 task :setup_github_pages do
   rm_rf DeployDir
