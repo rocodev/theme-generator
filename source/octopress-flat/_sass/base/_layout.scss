@@ -47,7 +47,7 @@ body {
   max-width: $max-width;
   position: relative;
   margin: 0 auto;
-  > header, > nav, > footer, #content > article, #content > div > article, #content > div > section {
+  > header, > nav, > footer, #content > article, #content > div > article, #content > div > section, #content .search-result-desc {
     @extend .group;
     padding-left: $pad-min;
     padding-right: $pad-min;
@@ -91,6 +91,10 @@ body {
 #content {
   overflow: hidden;
   > div, > article { width: 100%; }
+
+  .search-result-desc {
+    margin: 2em 0 -2em;
+  }
 }
 
 aside.sidebar {
