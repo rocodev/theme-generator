@@ -108,6 +108,20 @@ end
 
 
 task :deploy_s3 do
+  if /nothing to commit/ !~ `git status`
+    abort "Directory not clean, please commit and push it first"
+  end
+
+  system "git fetch"
+
+  push_testing = `git diff --stat origin/master`
+
+  if push_testing.length > 0
+    abort "Some commits not push, please push it first"
+  end
+
+  Rake::Task[:generate].execute
+
 
   config = {
     "s3_id"     => Setting["s3_id"],
