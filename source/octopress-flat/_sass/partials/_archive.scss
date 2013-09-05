@@ -11,8 +11,8 @@
     }
     footer { padding: 0; margin: 0;}
   }
-  h2 { display: none; }
-  h1 {
+  .year-title { display: none; }
+  h1, .title {
     color: $white;
     margin-bottom: .3em;
     font-size: 1.2em;
@@ -41,7 +41,7 @@
   a:hover { color: $link-color-hover; }
   @media only screen and (min-width: 550px) {
     article { margin-left: 5em; }
-    h2 {
+    .year-title {
       margin-bottom: .3em;
       font-weight: normal;
       display: inline-block;
