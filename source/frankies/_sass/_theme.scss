@@ -4,7 +4,7 @@ body {
   font-family: $font-serif;
   -webkit-font-smoothing: antialiased;
 
-  @include baseline-grid-background(1.75em);
+  //@include baseline-grid-background(1.75em);
 }
 
 .site-header {
@@ -44,12 +44,9 @@ body {
 
   .site-navbar {
     font-size: 0;
-    list-style: none;
-    padding: 0;
 
     li {
       font-size: $base-font-size;
-      display: inline;
       @include adjust-leading-to(2);
     }
     li + li:before {
@@ -71,7 +68,7 @@ body {
   @include rhythm(0,1,1,1);
 
   & + & {
-    border-top: 1px solid rgba(0,0,0,.15);
+    border-top: 1px solid $post-border-color;
     margin-top: -1px;
   }
 
@@ -95,6 +92,30 @@ body {
     padding: 0 $base-line-height;
 
     @include adjust-leading-to(2, $post-font-size);
+  }
+
+  .post-social-share {
+    height: relative-size(20px);
+    margin: relative-size($base-line-height) 0;
+    padding: relative-size( ($base-line-height - 20px)/2 );
+  }
+
+  .post-footer {
+    border-top: 1px solid $post-border-color;
+    border-bottom: 1px solid $post-border-color;
+    margin: -1px 0;
+
+    &, .tag-list a {
+      color: hsl(0,0%,46%);
+    }
+
+    @include adjust-leading-to(2);
+  }
+
+  .tag-list {
+    a:before {
+      content: '#';
+    }
   }
 }
 
