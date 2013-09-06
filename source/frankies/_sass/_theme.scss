@@ -1,9 +1,10 @@
 body {
   background-image: image-url('background.jpg');
   color: hsl(0,0%,32%);
+  font-family: $font-serif;
   -webkit-font-smoothing: antialiased;
 
-  //@include baseline-grid-background(1.75em);
+  @include baseline-grid-background(1.75em);
 }
 
 .site-header {
@@ -88,7 +89,6 @@ body {
   }
 
   .post-content {
-    font-family: $font-serif;
     @include adjust-font-size-to($post-font-size);
   }
 
@@ -107,6 +107,15 @@ body {
   }
 }
 
+.site-footer {
+  background-color: rgba(0,0,0,.65);
+  text-align: center;
 
+  @include adjust-leading-to(2);
+
+  &, a {
+    color: white;
+  }
+}
 
 
