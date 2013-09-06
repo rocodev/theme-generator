@@ -1,0 +1,24 @@
+// Variables
+$base-font-size: 16px;
+$base-line-height: 28px;
+
+$font-title: "Avenir Next Condensed", sans-serif;
+
+$site-header-shadow: 0 1px 5px rgba(0,0,0,.75);
+
+// Functions
+@function image-url($image-name) {
+  @return url("../images/#{$image-name}");
+}
+
+@function margin-to-retain-rhythm($elem-height) {
+  $lines: lines-for-font-size($elem-height);
+  $margin-needed: ( ($base-line-height * $lines) - ($elem-height) ) / 2;
+
+  @return ($margin-needed / $base-font-size) * $font-unit;
+}
+
+// Mixins
+@mixin make-circle($elem-width, $elem-border-width: 0) {
+  border-radius: (($elem-width + $elem-border-width*2) / 2);
+}

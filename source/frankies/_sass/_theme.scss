@@ -1,0 +1,40 @@
+body {
+  background-image: image-url('background.jpg');
+  @include baseline-grid-background(1.75em);
+}
+
+.site-header {
+  background: image-url('bkg-header.jpg') no-repeat center center;
+  text-align: center;
+
+  @include background-size(cover);
+  @include padding-leader(2);
+
+  .site-cover {
+    $diameter : 135px;
+    width: $diameter;
+    height: $diameter;
+    border: 10px solid white;
+    overflow: hidden;
+    margin: margin-to-retain-rhythm(155px) auto;
+
+    @include make-circle($diameter, 10px);
+    @include box-shadow($site-header-shadow);
+  }
+
+  .site-title, .site-navbar {
+    color: white;
+    font-family: $font-title;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  }
+
+  .site-title {
+    text-shadow: $site-header-shadow;
+    margin: 0;
+
+    @include adjust-font-size-to(48px);
+    @include rhythm(0,0,0,1,48px);
+  }
+}
