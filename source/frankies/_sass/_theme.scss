@@ -1,6 +1,9 @@
 body {
   background-image: image-url('background.jpg');
-  @include baseline-grid-background(1.75em);
+  color: hsl(0,0%,32%);
+  -webkit-font-smoothing: antialiased;
+
+  //@include baseline-grid-background(1.75em);
 }
 
 .site-header {
@@ -8,7 +11,8 @@ body {
   text-align: center;
 
   @include background-size(cover);
-  @include padding-leader(2);
+  @include padding-leader(2.5);
+  @include padding-trailer(0.5);
 
   .site-cover {
     $diameter : 135px;
@@ -28,8 +32,6 @@ body {
     color: white;
     font-family: $font-title;
     font-weight: 600;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
   }
 
   .site-title {
@@ -58,3 +60,53 @@ body {
     }
   }
 }
+
+.main-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.blog-post {
+  @include rhythm(0,1,1,1);
+
+  & + & {
+    border-top: 1px solid rgba(0,0,0,.15);
+    margin-top: -1px;
+  }
+
+  .post-title {
+    font-family: $font-title;
+    font-weight: 600;
+
+    @include adjust-font-size-to(36px);
+    @include leader(1, 36px);
+    @include trailer(1, 36px);
+
+    &, a {
+      color: hsl(0,0%,27%);
+    }
+  }
+
+  .post-content {
+    font-family: $font-serif;
+    @include adjust-font-size-to($post-font-size);
+  }
+
+  .more-link {
+    background-color: rgba(0,0,0,.65);
+    color: white;
+    display: inline-block;
+    padding: 0 $base-line-height;
+
+    @include adjust-leading-to(2, $post-font-size);
+  }
+
+  p {
+    @include leader(1, $post-font-size);
+    @include trailer(1, $post-font-size);
+  }
+}
+
+
+
+
