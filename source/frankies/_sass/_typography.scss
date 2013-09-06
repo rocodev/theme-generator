@@ -1,0 +1,43 @@
+.blog-post .post-content {
+  @include adjust-font-size-to($post-font-size);
+
+  p {
+    @include leader(1, $post-font-size);
+    @include trailer(1, $post-font-size);
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: $font-title;
+    font-weight: 600;
+  }
+
+  h2 {
+    @include adjust-font-size-to(36px, 2, 20px);
+    @include leader(1, 36px);
+    @include trailer(1, 36px);
+  }
+
+  h3 {
+    @include adjust-font-size-to(30px, 2, 20px);
+    @include leader(1, 30px);
+    @include trailer(1, 30px);
+  }
+
+  h4 {
+    @include adjust-font-size-to(24px, 1, 20px);
+    @include leader(1, 24px);
+    @include trailer(1, 24px);
+  }
+
+  h5, h6 {
+    @include adjust-font-size-to(20px, 1, 20px);
+    @include leader(1, 20px);
+    @include trailer(1, 20px);
+  }
+
+  h6 {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+}
