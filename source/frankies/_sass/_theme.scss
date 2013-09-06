@@ -14,12 +14,14 @@ body {
     $diameter : 135px;
     width: $diameter;
     height: $diameter;
-    border: 10px solid white;
     overflow: hidden;
-    margin: margin-to-retain-rhythm(155px) auto;
+    margin: margin-to-retain-rhythm(135px) auto;
 
-    @include make-circle($diameter, 10px);
-    @include box-shadow($site-header-shadow);
+    @include make-circle($diameter);
+    @include box-shadow(
+      0 0 0 10px white,
+      0 1px 5px 10px rgba(0,0,0,.75)
+    );
   }
 
   .site-title, .site-navbar {
@@ -34,7 +36,25 @@ body {
     text-shadow: $site-header-shadow;
     margin: 0;
 
-    @include adjust-font-size-to(48px);
-    @include rhythm(0,0,0,1,48px);
+    @include adjust-font-size-to(48px, 3);
+  }
+
+  .site-navbar {
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: $base-font-size;
+      display: inline;
+      @include adjust-leading-to(2);
+    }
+    li + li:before {
+      content: '•';
+      padding: 0 relative-size(10px);
+    }
+    a {
+      color: white;
+    }
   }
 }

@@ -11,11 +11,15 @@ $site-header-shadow: 0 1px 5px rgba(0,0,0,.75);
   @return url("../images/#{$image-name}");
 }
 
+@function relative-size($absolute-size) {
+  @return $absolute-size / $base-font-size * $font-unit;
+}
+
 @function margin-to-retain-rhythm($elem-height) {
   $lines: lines-for-font-size($elem-height);
   $margin-needed: ( ($base-line-height * $lines) - ($elem-height) ) / 2;
 
-  @return ($margin-needed / $base-font-size) * $font-unit;
+  @return relative-size($margin-needed);
 }
 
 // Mixins
