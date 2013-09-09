@@ -2,6 +2,12 @@
 .blog-post .post-content {
   // $post-font-size: 20px;
 
+  // Overall Margins
+  %vertical-margin {
+    @include leader(1, $post-font-size);
+    @include trailer(1, $post-font-size);
+  }
+
   // Images & Alignments
   .left {
     @extend .pull-left;
@@ -18,8 +24,7 @@
 
   // Lists
   ol, ul {
-    @include leader(1, $post-font-size);
-    @include trailer(1, $post-font-size);
+    @extend %vertical-margin;
 
     ol, ul {
       @include leader(0.5, $post-font-size);
@@ -58,6 +63,34 @@
       background-color: $post-border-color;
       text-align: left;
       text-shadow: 0 1px 1px rgba(255,255,255,.75);
+    }
+  }
+
+  // Blockquotes
+  blockquote {
+    @extend %vertical-margin;
+    font-style: italic;
+  }
+  .figure-quote {
+    position: relative;
+    @include leader(1.5, $post-font-size);
+    @include trailer(1.5, $post-font-size);
+
+    &:before {
+      content: '“';
+      color: $post-border-color;
+      font-size: 500%;
+      position: absolute;
+      top: 0.1em;
+      left: 0;
+    }
+
+    blockquote {
+      margin: 0 0 0 2em;
+    }
+    figcaption {
+      margin: relative-size($base-line-height * -0.5) 2em;
+      @include adjust-font-size-to($base-font-size, 1, $post-font-size);
     }
   }
 }
