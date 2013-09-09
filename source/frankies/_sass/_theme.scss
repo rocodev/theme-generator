@@ -42,24 +42,49 @@ body {
 
     @include adjust-font-size-to(48px, 3);
   }
+}
 
-  .site-navbar {
-    font-size: 0;
+// Global Navbar
+.site-navbar {
+  overflow: hidden;
 
-    li {
-      font-size: $base-font-size;
-      @include adjust-leading-to(2);
+  html.js & {
+    height: relative-size($base-line-height * 2);
+  }
+
+  &.in-search {
+    .site-nav-links {
+      @include transform(translateY($base-line-height * -2))
     }
-    li + li:before {
-      content: '•';
-      padding: 0 relative-size(10px);
+    .site-search {
+      @include transform(translateY($base-line-height * -1.5))
     }
-    a {
-      color: white;
-    }
+  }
+
+  .site-nav-links, .site-search {
+    -webkit-transition: 300ms cubic-bezier(.6,0,.4,0); // Fallback for legacy WebKit
+    @include transition(450ms cubic-bezier(.7,-0.5,.3,1.5));
   }
 }
 
+.site-nav-links {
+  font-size: 0;
+
+  li {
+    font-size: $base-font-size;
+    @include adjust-leading-to(2);
+  }
+  li + li:before {
+    content: '•';
+    padding: 0 relative-size(10px);
+  }
+  a {
+    color: white;
+  }
+  .no-js & .search-toggle {
+    @extend .hide;
+  }
+}
 
 %site-search-inactive {
   color: white;
@@ -74,10 +99,14 @@ body {
   .btn-search {
     color: white;
     color: rgba(255,255,255,.75);
+    margin-right: -6px; // Eliminate the transparent padding for better align
     @include transition(color 150ms);
   }
   .btn-cancel {
+    margin-left: -6px; // Eliminate the transparent padding for better align
     @extend %site-search-inactive;
+
+    .no-js & { @extend .hide; }
   }
 }
 
