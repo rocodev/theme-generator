@@ -21,8 +21,8 @@ $base-color-lighter: hsl(0,0%,46%);
   @return url("../images/#{$image-name}");
 }
 
-@function relative-size($absolute-size) {
-  @return $absolute-size / $base-font-size * $font-unit;
+@function relative-size($absolute-size, $base-size: $base-font-size) {
+  @return $absolute-size / $base-size * $font-unit;
 }
 
 @function margin-to-retain-rhythm($elem-height) {
