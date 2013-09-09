@@ -4,7 +4,7 @@ body {
   font-family: $font-serif;
   -webkit-font-smoothing: antialiased;
 
-  @include baseline-grid-background(1.75em);
+  //@include baseline-grid-background(1.75em);
 }
 
 .site-header {
