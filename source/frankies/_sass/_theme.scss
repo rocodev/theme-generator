@@ -4,11 +4,12 @@ body {
   font-family: $font-serif;
   -webkit-font-smoothing: antialiased;
 
-  //@include baseline-grid-background(1.75em);
+  @include baseline-grid-background(1.75em);
 }
 
 .site-header {
   background: image-url('bkg-header.jpg') no-repeat center center;
+  //background: rgba(0,0,0,.3);
   text-align: center;
 
   @include background-size(cover);
@@ -29,7 +30,7 @@ body {
     );
   }
 
-  .site-title, .site-navbar {
+  .site-title, .site-navbar, .site-search-field {
     color: white;
     font-family: $font-title;
     font-weight: 600;
@@ -58,6 +59,58 @@ body {
     }
   }
 }
+
+
+%site-search-inactive {
+  color: white;
+  color: rgba(255,255,255,.5);
+}
+
+.site-search {
+  .btn-search, .btn-cancel {
+    background: none;
+    border: none;
+  }
+  .btn-search {
+    color: white;
+    color: rgba(255,255,255,.75);
+    @include transition(color 150ms);
+  }
+  .btn-cancel {
+    @extend %site-search-inactive;
+  }
+}
+
+.site-search-field {
+  width: 240px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,.75);
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  @include transition(border-color 150ms);
+
+  &::-webkit-input-placeholder,
+  &::-webkit-input-speech-button:before {
+    @extend %site-search-inactive;
+  }
+
+  &::-webkit-input-speech-button {
+    -webkit-appearance: none;
+    padding: 0 0.2em;
+  }
+  &::-webkit-input-speech-button:before {
+    content: '\f130';
+    font-family: FontAwesome;
+    font-size: 85%;
+  }
+
+  &:focus {
+    border-bottom-color: white;
+    & + .btn-search { color: white; }
+  }
+}
+
 
 .main-content {
   max-width: 700px;
