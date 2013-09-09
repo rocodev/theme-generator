@@ -1,10 +1,6 @@
 .figure-code {
   width: 100%;
-  color: $solar-text;
-  font-family: $font-mono;
-  -webkit-font-smoothing: subpixel-antialiased;
 
-  @include adjust-font-size-to($base-font-size, 1, $post-font-size);
   @include leader(1);
   @include trailer(1);
 
@@ -17,6 +13,7 @@
     border-top-right-radius: 4px;
 
     @include adjust-font-size-to(15px);
+    @include box-shadow(inset 0 0 1px rgba(0,0,0,.5));
   }
 }
 
@@ -26,9 +23,57 @@
   overflow: auto;
 }
 
-.highlight pre {
-  white-space: pre;
+.figure-code, .gist .gist-syntax table.highlight {
+  color: $solar-text;
+  font-family: $font-mono;
+  -webkit-font-smoothing: subpixel-antialiased;
+  @include adjust-font-size-to($base-font-size, 1, $post-font-size);
+}
+
+.gist .gist-syntax table.highlight {
+  width: 100%;
+  margin: 0;
+}
+
+.highlight pre,
+.gist .gist-file .gist-syntax.gist-data .line-data,
+.gist .gist-file .gist-syntax.gist-data .line-numbers {
   @include rhythm(0,.5,.5,0);
+}
+
+.gist .gist-file .gist-syntax.gist-data .line-data {
+  padding-left: 1.5em !important;
+  padding-right: 1.5em !important;
+}
+
+.gist .gist-file .gist-meta {
+  font-size: relative-size(13px, $post-font-size) !important;
+  line-height: relative-size($base-line-height, 13px) !important;
+  padding: 0 10px !important;
+}
+
+// gist border fix
+.gist .gist-file {
+  border: none !important;
+  border-radius: 4px;
+  @include box-shadow(0 0 1px rgba(0,0,0,.75));
+}
+.gist .gist-file .gist-data {
+  border-bottom: none !important;
+}
+.gist .gist-file .gist-data .line-numbers {
+  border-top-left-radius: 4px;
+}
+.gist .gist-file .gist-meta {
+  border-radius: 0 0 4px 4px;
+}
+.gist .gist-syntax table.highlight {
+  border-radius: 4px 4px 0 0;
+}
+
+// Syntax Highlighting
+.highlight pre, .gist .gist-file .gist-data .line-pre {
+  white-space: pre;
 
   .c      { color: $solar-comments !important; font-style: italic !important; }                     /* Comment */
   .cm     { color: $solar-comments !important; font-style: italic !important; }                     /* Comment.Multiline */
