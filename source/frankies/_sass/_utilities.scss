@@ -10,6 +10,12 @@ $font-mono: "Source Code Pro", monospace;
 $site-header-shadow: 0 1px 5px rgba(0,0,0,.75);
 $post-border-color: rgba(0,0,0,.15);
 
+$base-color: hsl(0,0%,32%);
+$base-color-dark: hsl(0,0%,27%);
+$base-color-darker: hsl(0,0%,18%);
+$base-color-light: hsl(0,0%,37%);
+$base-color-lighter: hsl(0,0%,46%);
+
 // Functions
 @function image-url($image-name) {
   @return url("../images/#{$image-name}");

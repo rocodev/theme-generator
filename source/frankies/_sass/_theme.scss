@@ -1,6 +1,6 @@
 body {
   background-image: image-url('background.jpg');
-  color: hsl(0,0%,32%);
+  color: $base-color;
   font-family: $font-serif;
   -webkit-font-smoothing: antialiased;
 
@@ -81,7 +81,7 @@ body {
     @include trailer(1, 36px);
 
     &, a {
-      color: hsl(0,0%,27%);
+      color: $base-color-dark;
     }
   }
 
@@ -106,7 +106,7 @@ body {
     margin: -1px 0;
 
     &, .tag-list a {
-      color: hsl(0,0%,46%);
+      color: $base-color-lighter;
     }
 
     @include adjust-leading-to(2);
