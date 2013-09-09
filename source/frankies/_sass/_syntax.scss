@@ -7,6 +7,8 @@
 
 %syntax-pre-rhythm {
   @include rhythm(0,.5,.5,0);
+  padding-top: ($base-line-height/$base-font-size)* 0.5 * $font-unit !important;
+  padding-bottom: ($base-line-height/$base-font-size)* 0.5 * $font-unit !important;
 }
 
 %syntax-highlighting {
@@ -106,6 +108,7 @@
   overflow: auto;
 
   pre {
+    margin: 0;
     @extend %syntax-pre-rhythm;
     @extend %syntax-highlighting;
   }
@@ -126,6 +129,11 @@ code {
 }
 
 // Gist Code Components
+.gist {
+  @include leader(1, $post-font-size);
+  @include trailer(1, $post-font-size);
+}
+
 .gist .gist-syntax table.highlight {
   @extend %syntax-font-size-family;
 
@@ -148,8 +156,8 @@ code {
 }
 
 .gist .gist-file .gist-meta {
-  font-size: relative-size(13px, $post-font-size) !important;
-  line-height: relative-size($base-line-height, 13px) !important;
+  font-size: relative-size(14px, $post-font-size) !important;
+  line-height: relative-size($base-line-height, 14px) !important;
   padding: 0 10px !important;
 }
 
