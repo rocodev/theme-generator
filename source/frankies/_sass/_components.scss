@@ -15,4 +15,19 @@
     margin: 0 auto;
     display: block;
   }
+
+  // Lists
+  ol, ul {
+    @include leader(1, $post-font-size);
+    @include trailer(1, $post-font-size);
+
+    ol, ul {
+      @include leader(0.5, $post-font-size);
+      @include trailer(0.5, $post-font-size);
+    }
+
+    ul {
+      list-style: square;
+    }
+  }
 }
