@@ -1,3 +1,8 @@
+p {
+  @include leader(1);
+  @include trailer(1);
+}
+
 .blog-post .post-content {
   @include adjust-font-size-to($post-font-size);
 
