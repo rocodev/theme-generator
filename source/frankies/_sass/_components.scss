@@ -41,7 +41,7 @@
 
   table {
     min-width: 80%;
-    font-size: $table-font-size;
+    font-size: relative-size($table-font-size, $post-font-size);
     margin: relative-size($base-line-height, $table-font-size) auto;
 
     @include adjust-leading-to(2, $table-font-size);
@@ -61,6 +61,8 @@
   thead {
     th, td {
       background-color: $post-border-color;
+      font-family: $font-title;
+      font-weight: 600;
       text-align: left;
       text-shadow: 0 1px 1px rgba(255,255,255,.75);
     }
