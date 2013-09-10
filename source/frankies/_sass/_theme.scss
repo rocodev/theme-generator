@@ -16,6 +16,11 @@ body {
   @include padding-leader(2.5);
   @include padding-trailer(0.5);
 
+  .header-link {
+    text-decoration: none;
+    display: block;
+  }
+
   .site-cover {
     $diameter : 135px;
     width: $diameter;
