@@ -43,6 +43,8 @@
   }
 
   .main-content {
+    @include trailer(2, $post-font-size);
+
     img.left, img.right {
       float: none;
       margin: 0 auto;
@@ -52,6 +54,11 @@
 
   .blog-post {
     padding: 0;
+  }
+
+  .pagination {
+    @include leader(2);
+    @include trailer(-2);
   }
 }
 
