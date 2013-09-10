@@ -114,6 +114,14 @@
   }
 }
 
+strong.highlight {
+  // Used as search keyword highlight, not code highlight
+  // Thus revert styles for code highlight, and set other styles
+  background-color: transparentize(#FCEE85, .15);
+  font-weight: inherit;
+  padding: 0;
+}
+
 // Inline Code
 
 code {
