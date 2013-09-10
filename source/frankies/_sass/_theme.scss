@@ -211,8 +211,6 @@ body {
 }
 
 .annual-archive {
-  $list-item-height: relative-size($base-line-height*2, $post-font-size);
-
   .archive-list {
     list-style: none;
     padding-left: 0;
@@ -222,7 +220,7 @@ body {
   .archive-item {
     @extend .group;
 
-    height: $list-item-height;
+    height: relative-size($base-line-height*2, $post-font-size);
     font-family: $font-title;
     font-weight: 600;
 
@@ -230,28 +228,23 @@ body {
     @include trailer(0.5, $post-font-size);
   }
   .archive-date {
-    width: $list-item-height;
-    height: 100%;
+    width: relative-size(40px, $post-font-size);
+    height: relative-size(40px, $post-font-size);
+    line-height: 1;
     text-align: center;
     text-transform: uppercase;
-    line-height: relative-size($base-line-height - 8px, $post-font-size);
-    border: 3px solid;
+    border: relative-size(3px, $post-font-size) solid;
     border-radius: 4px;
-    padding: 6px 0 4px;
     float: left;
+    margin: relative-size(($base-line-height*2 - 46px)/2, $post-font-size) 0;
 
-    @include box-sizing(border-box);
-
-    .month, .day {
-      display: block;
-    }
     .month {
-      font-size: relative-size(18px, $post-font-size);
+      font-size: relative-size(16px, $post-font-size);
     }
   }
   .archive-title {
     height: 100%;
-    margin-left: (relative-size($base-line-height*2, 24px) + 0.6em);
+    margin-left: (relative-size(46px, 24px) + 0.6em);
     display: block;
     @include adjust-font-size-to(24px, 1, $post-font-size);
   }
