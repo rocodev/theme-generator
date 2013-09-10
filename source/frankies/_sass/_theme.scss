@@ -211,11 +211,14 @@ body {
 }
 
 .annual-archive {
+  .archive-year {
+    @include leader(1.5, $h3-size);
+    @include trailer(0.5, $h3-size);
+  }
   .archive-list {
     list-style: none;
     padding-left: 0;
-
-    @include leader(-0.5, $post-font-size);
+    margin-top: 0;
   }
   .archive-item {
     @extend .group;
