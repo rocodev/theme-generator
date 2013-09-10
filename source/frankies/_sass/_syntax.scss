@@ -137,7 +137,7 @@ code {
 }
 
 // Gist Code Components
-.gist {
+.gist, .gist-file {
   @include leader(1, $post-font-size);
   @include trailer(1, $post-font-size);
 }
