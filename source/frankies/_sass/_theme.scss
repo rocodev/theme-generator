@@ -274,7 +274,34 @@ body {
   }
 }
 
+.pagination {
+  @extend %reduce-subpixel-smoothing;
+
+  text-align: center;
+  border-top: 1px solid $post-border-color;
+  margin-top: -1px;
+
+  @include adjust-font-size-to($base-font-size, 2, $post-font-size);
+
+  a {
+    color: $base-color-light;
+  }
+
+  .prev {
+    float: left;
+  }
+  .next {
+    float: right;
+  }
+  .archive {
+    &:before { content: '— '; }
+    &:after { content: ' —'; }
+  }
+}
+
 .site-footer {
+  @extend %reduce-subpixel-smoothing;
+
   background-color: rgba(0,0,0,.65);
   text-align: center;
 
