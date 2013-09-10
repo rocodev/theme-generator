@@ -92,6 +92,7 @@
     }
     figcaption {
       margin: relative-size($base-line-height * -0.5) 2em;
+      @include hyphenation;
       @include adjust-font-size-to($base-font-size, 1, $post-font-size);
     }
   }
