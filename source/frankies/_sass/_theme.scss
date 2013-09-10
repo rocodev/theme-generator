@@ -1,13 +1,18 @@
+%reduce-subpixel-smoothing {
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   background-image: image-url('background.jpg');
   color: $base-color;
   font-family: $font-serif;
-  -webkit-font-smoothing: antialiased;
 
   //@include baseline-grid-background(1.75em);
 }
 
 .site-header {
+  @extend %reduce-subpixel-smoothing;
+
   background: image-url('bkg-header.jpg') no-repeat center center;
   text-align: center;
 
@@ -163,6 +168,8 @@ body {
   }
 
   .post-title {
+    @extend %reduce-subpixel-smoothing;
+
     font-family: $font-title;
     font-weight: 600;
 
@@ -249,9 +256,13 @@ body {
     }
   }
   .archive-title {
+    @extend %reduce-subpixel-smoothing;
+
     height: 100%;
+    color: $base-color-dark;
     margin-left: (relative-size(46px, 24px) + 0.6em);
     display: block;
+
     @include adjust-font-size-to(24px, 1, $post-font-size);
   }
   .archive-link {

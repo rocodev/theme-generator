@@ -9,9 +9,9 @@ $h4-size: 24px;
 $h5-size: 20px;
 $h6-size: $h5-size;
 
-$font-title: "Avenir Next Condensed", sans-serif;
-$font-serif: Georgia, serif;
-$font-mono: "Source Code Pro", monospace;
+$font-title: "Avenir Next Condensed", "PT Sans Narrow", "Helvetica Neue Condensed", "Hiragino Kaku Gothic Pro", "Hiragino Sans GB", sans-serif;
+$font-serif: Georgia, "PT Serif", "Times New Roman", Times, serif;
+$font-mono: "Source Code Pro", Menlo, Monaco, Courier, monospace;
 
 $site-header-shadow: 0 1px 5px rgba(0,0,0,.75);
 $post-border-color: rgba(0,0,0,.15);
@@ -21,6 +21,12 @@ $base-color-dark: hsl(0,0%,27%);
 $base-color-darker: hsl(0,0%,18%);
 $base-color-light: hsl(0,0%,37%);
 $base-color-lighter: hsl(0,0%,46%);
+
+// Font Declairations
+@font-face {
+  font-family: "Helvetica Neue Condensed";
+  src: local("Helvetica Neue Condensed Bold"), local("HelveticaNeue-CondensedBold");
+}
 
 // Functions
 @function image-url($image-name) {
