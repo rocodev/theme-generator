@@ -162,6 +162,7 @@ body {
 .main-content {
   max-width: 700px;
   margin: 0 auto;
+  @include trailer(2);
 }
 
 .search-result-meta + .blog-post {
@@ -287,6 +288,8 @@ body {
   margin-top: -1px;
 
   @include adjust-font-size-to($base-font-size, 2, $post-font-size);
+  @include leader(2);
+  @include trailer(-2);
 
   a {
     color: $base-color-light;
