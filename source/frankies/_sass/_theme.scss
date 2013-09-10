@@ -9,7 +9,6 @@ body {
 
 .site-header {
   background: image-url('bkg-header.jpg') no-repeat center center;
-  //background: rgba(0,0,0,.3);
   text-align: center;
 
   @include background-size(cover);
@@ -156,7 +155,7 @@ body {
 }
 
 .blog-post {
-  @include rhythm(0,1,1,1);
+  @include rhythm(0,1,1,1, $post-font-size);
 
   & + & {
     border-top: 1px solid $post-border-color;
@@ -167,7 +166,7 @@ body {
     font-family: $font-title;
     font-weight: 600;
 
-    @include adjust-font-size-to(36px);
+    @include adjust-font-size-to(36px, 2, $post-font-size);
     @include leader(1, 36px);
     @include trailer(1, 36px);
 
@@ -208,6 +207,10 @@ body {
       content: '#';
     }
   }
+}
+
+.main-content .archive-page-title {
+  @include leader(2, $h2-size);
 }
 
 .annual-archive {
