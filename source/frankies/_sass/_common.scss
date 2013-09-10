@@ -24,6 +24,22 @@ a:hover {
   }
 }
 
+.vertical-center {
+  &:before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -1px;
+  }
+  .center-inner {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
 .hide {
   display: none;
 }

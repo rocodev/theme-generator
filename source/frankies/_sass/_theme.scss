@@ -210,6 +210,56 @@ body {
   }
 }
 
+.annual-archive {
+  $list-item-height: relative-size($base-line-height*2, $post-font-size);
+
+  .archive-list {
+    list-style: none;
+    padding-left: 0;
+
+    @include leader(-0.5, $post-font-size);
+  }
+  .archive-item {
+    @extend .group;
+
+    height: $list-item-height;
+    font-family: $font-title;
+    font-weight: 600;
+
+    @include leader(0.5, $post-font-size);
+    @include trailer(0.5, $post-font-size);
+  }
+  .archive-date {
+    width: $list-item-height;
+    height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: relative-size($base-line-height - 8px, $post-font-size);
+    border: 3px solid;
+    border-radius: 4px;
+    padding: 6px 0 4px;
+    float: left;
+
+    @include box-sizing(border-box);
+
+    .month, .day {
+      display: block;
+    }
+    .month {
+      font-size: relative-size(18px, $post-font-size);
+    }
+  }
+  .archive-title {
+    height: 100%;
+    margin-left: (relative-size($base-line-height*2, 24px) + 0.6em);
+    display: block;
+    @include adjust-font-size-to(24px, 1, $post-font-size);
+  }
+  .archive-link {
+    color: inherit;
+  }
+}
+
 .site-footer {
   background-color: rgba(0,0,0,.65);
   text-align: center;
