@@ -3,7 +3,7 @@ p {
   @include trailer(1);
 }
 
-.blog-post .post-content {
+.main-content {
   @include adjust-font-size-to($post-font-size);
 
   p {
