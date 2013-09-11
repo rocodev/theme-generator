@@ -9,7 +9,7 @@ $h4-size: 24px;
 $h5-size: 20px;
 $h6-size: $h5-size;
 
-$font-title: "Avenir Next Condensed", "PT Sans Narrow", "Helvetica Neue Condensed", "Hiragino Kaku Gothic Pro", "Hiragino Sans GB", sans-serif;
+$font-title: "Avenir Next Condensed Demi Bold", "PT Sans Narrow", "Helvetica Neue Condensed", "Hiragino Kaku Gothic Pro", "Hiragino Sans GB", sans-serif;
 $font-serif: Georgia, "PT Serif", "Times New Roman", Times, serif;
 $font-mono: "Source Code Pro", Menlo, Monaco, Courier, monospace;
 
@@ -27,6 +27,19 @@ $search-inactive-color: rgba(255,255,255,.5);
 $search-border-color: rgba(255,255,255,.75);
 
 // Font Declairations
+@font-face {
+  font-family: "Avenir Next Condensed Demi Bold";
+  src: local("Avenir Next Condensed Demi Bold"), local("AvenirNextCondensed-DemiBold");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Condensed Demi Bold";
+  src: local("Avenir Next Condensed Demi Bold Italic"), local("AvenirNextCondensed-DemiBoldItalic");
+  font-weight: 600;
+  font-style: italic;
+}
+
 @font-face {
   font-family: "Helvetica Neue Condensed";
   src: local("Helvetica Neue Condensed Bold"), local("HelveticaNeue-CondensedBold");
