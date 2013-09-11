@@ -68,6 +68,10 @@
   .blog-post {
     padding: 0;
   }
+
+  body > iframe[src^="http://logdown"] {
+    position: absolute !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
