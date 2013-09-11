@@ -74,6 +74,7 @@ body {
       @include transform(translateY($base-line-height * -2))
     }
     .site-search {
+      pointer-events: auto;
       @include transform(translateY($base-line-height * -1.5))
     }
   }
@@ -105,19 +106,26 @@ body {
 }
 
 .site-search {
+
+  html.js & {
+    pointer-events: none;
+  }
+
   .btn-search, .btn-cancel {
     background: none;
     border: none;
+    padding-left: relative-size(6px);
+    padding-right: relative-size(6px);
   }
   .btn-search {
     color: white;
     color: $search-border-color;
-    margin-right: -6px; // Eliminate the transparent padding for better align
+    margin-right: relative-size(-6px); // Eliminate the transparent padding for better align
     @include transition(color 150ms);
   }
   .btn-cancel {
     color: $search-inactive-color;
-    margin-left: -6px; // Eliminate the transparent padding for better align
+    margin-left: relative-size(-6px); // Eliminate the transparent padding for better align
 
     .no-js & { @extend .hide; }
   }
