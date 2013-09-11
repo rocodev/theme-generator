@@ -29,16 +29,11 @@ $search-border-color: rgba(255,255,255,.75);
 // Font Declairations
 @font-face {
   font-family: "Avenir Next Condensed Demi Bold";
-  src: local("Avenir Next Condensed Demi Bold"), local("AvenirNextCondensed-DemiBold");
+  src: local("AvenirNextCondensed-DemiBold"), local("Avenir Next Condensed Demi Bold");
   font-weight: 600;
   font-style: normal;
 }
-@font-face {
-  font-family: "Avenir Next Condensed Demi Bold";
-  src: local("Avenir Next Condensed Demi Bold Italic"), local("AvenirNextCondensed-DemiBoldItalic");
-  font-weight: 600;
-  font-style: italic;
-}
+
 
 @font-face {
   font-family: "Helvetica Neue Condensed";
