@@ -220,14 +220,16 @@ body {
     border-bottom: 1px solid $post-border-color;
     margin: -1px 0;
 
+    @include adjust-font-size-to($base-font-size, 2, $post-font-size);
+
     &, .tag-list a {
       color: $base-color-lighter;
     }
-
-    @include adjust-leading-to(2);
   }
 
   .tag-list {
+    margin : 0;
+
     a:before {
       content: '#';
     }
