@@ -470,7 +470,7 @@ table.highlight {
           margin: 0 1.25em;
         }
       }
-      iframe {
+      & > iframe {
         max-width: 100%;
       }
     }
