@@ -139,3 +139,6 @@ article + article {
     }
   }
 }
+
+.categories a:after {content: ',';}
+.categories a:last-child:after {content: '';}
