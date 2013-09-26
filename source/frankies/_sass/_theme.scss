@@ -71,7 +71,7 @@ body {
   }
 
   &.in-search {
-    .site-nav-links {
+    .site-nav-links, .site-nav-shadow {
       @include transform(translateY($base-line-height * -2))
     }
     .site-search {
@@ -80,7 +80,7 @@ body {
     }
   }
 
-  .site-nav-links, .site-search {
+  .site-nav-links, .site-nav-shadow, .site-search {
     -webkit-transition: 300ms cubic-bezier(.6,0,.4,0); // Fallback for legacy WebKit
     @include transition(450ms cubic-bezier(.7,-0.5,.3,1.5));
   }

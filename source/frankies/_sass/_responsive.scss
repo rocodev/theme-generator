@@ -49,7 +49,7 @@
         @include transform(translateY($base-line-height * -1.5))
       }
       .site-search {
-        @include transform(translateY($base-line-height * -1.15))
+        @include transform(translateY($base-line-height * -1.2))
       }
     }
   }
