@@ -16,6 +16,8 @@ var paintSiteNavShadow = function() {
   var $siteNavLinks = $('.site-nav-links'),
       $siteNavShadow = $('.site-nav-shadow');
 
+  if ($siteNavShadow.length < 1) return false;
+
   var navLinkWidth = $siteNavLinks.width(),
       navLinkScrollWidth = $siteNavLinks[0].scrollWidth,
       navLinkScrollLeft = $siteNavLinks[0].scrollLeft,
