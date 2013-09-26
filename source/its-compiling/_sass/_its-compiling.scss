@@ -232,22 +232,21 @@ table.highlight {
 .header {
   @extend .group;
   width: 100%;
-  margin: 3em auto 1.5em;
+  margin: 3em auto;
   text-transform: uppercase;
   font-weight: bold;
+
   a {
-    border: 0;
+    border: none;
   }
-  div, nav {
-    text-align: center;
-  }
+
   .logo {
     width: 21em;
     min-height: 50px;
     color: darken(white, 57%);
-    margin: 0 1em 1.5em;
+    text-align: center;
+    margin: 0 1em;
     float: left;
-
     @include transform(rotate(-2.5deg));
 
     h1 {
@@ -257,27 +256,35 @@ table.highlight {
       font-size: 0.8em;
     }
   }
+
   .nav {
-    max-width: 380px;
     text-align: right;
     vertical-align: top;
-    margin-top: -6px;
-    float: right;
+    margin: -0.375em 0 -1em;
+
+    & > ul {
+      text-align: center;
+      display: inline-block;
+    }
 
     li {
       width: 3.5em;
       text-align: center;
       line-height: 0.9;
+      margin-bottom: 1em;
     }
     li + li {
       margin-left: 0.25em;
     }
     a {
-      font-size: 1.75em;
       color: darken(white, 40%);
+      i {
+        font-size: 1.75em;
+      }
       span {
         display: block;
-        font-size: 0.25em;
+        font-size: 0.6em;
+        @include ellipsis;
       }
     }
     .archives:hover {
