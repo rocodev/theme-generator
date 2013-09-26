@@ -5,7 +5,10 @@
 
   .site-nav-links li {
     font-size: 17.5px;
-    @include adjust-leading-to(2, 20px);
+    @include adjust-leading-to(2, 20px); // 20px:16px = 17.5px:14px
+  }
+  .site-nav-shadow {
+    height: relative-size($base-line-height*2);
   }
   .site-search {
     @include adjust-font-size-to(20px);
@@ -37,7 +40,9 @@
   }
 
   .site-navbar {
-    height: relative-size($base-line-height * 1.5, 20px);
+    &, html.js &, .site-nav-shadow, {
+      height: relative-size($base-line-height * 1.5);
+    }
 
     &.in-search {
       .site-nav-links {
@@ -76,8 +81,8 @@
 
 @media screen and (max-width: 400px) {
   .site-header {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   .annual-archive {

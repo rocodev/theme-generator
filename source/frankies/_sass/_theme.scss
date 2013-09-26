@@ -88,27 +88,27 @@ body {
 
 .site-nav-shadow {
   width: 100%;
-  height: $base-line-height*2;
+  height: relative-size($base-line-height*2);
   position: absolute;
   top: 0;
   pointer-events: none;
 
   &::before, &::after {
     content: '';
-    width: $base-line-height;
+    width: relative-size($base-line-height);
     height: 100%;
     display: block;
-    border-radius: $base-line-height;
+    border-radius: relative-size($base-line-height);
     position: absolute;
     top: 0;
   }
   &.left-shadow::before {
-    background: linear-gradient(to right, rgba(0,0,0,.3), transparent $base-font-size);
+    background: linear-gradient(to right, rgba(0,0,0,.3), transparent 1em);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
   &.right-shadow::after {
-    background: linear-gradient(to left, rgba(0,0,0,.3), transparent $base-font-size);
+    background: linear-gradient(to left, rgba(0,0,0,.3), transparent 1em);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     right: 0;
