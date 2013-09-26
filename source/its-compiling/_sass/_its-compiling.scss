@@ -272,6 +272,7 @@ table.highlight {
       text-align: center;
       line-height: 0.9;
       margin-bottom: 1em;
+      vertical-align: top;
     }
     li + li {
       margin-left: 0.25em;
@@ -284,9 +285,10 @@ table.highlight {
       span {
         display: block;
         font-size: 0.6em;
-        @include ellipsis;
+        @include hyphenation;
       }
     }
+
     .archives:hover {
       color: #1b813e;
     }
@@ -306,6 +308,17 @@ table.highlight {
       color: #494949;
     }
   }
+  .nav.chrome-hack {
+    // Hack to get rid of Chrome default minimal font size of 12px;
+    a > span {
+      width: 6em;
+      font-size: 1em;
+      margin-left: -(6em - 3.5em) / 2;
+      @include transform(scale(0.6));
+      @include transform-origin(50%, 0);
+    }
+  }
+
   .search {
     float:right;
     width: 10em;
