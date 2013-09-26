@@ -64,6 +64,7 @@ body {
 // Global Navbar
 .site-navbar {
   overflow: hidden;
+  position: relative;
 
   html.js & {
     height: relative-size($base-line-height * 2);
@@ -85,9 +86,41 @@ body {
   }
 }
 
+.site-nav-shadow {
+  width: 100%;
+  height: $base-line-height*2;
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+
+  &::before, &::after {
+    content: '';
+    width: $base-line-height;
+    height: 100%;
+    display: block;
+    border-radius: $base-line-height;
+    position: absolute;
+    top: 0;
+  }
+  &.left-shadow::before {
+    background: linear-gradient(to right, rgba(0,0,0,.3), transparent $base-font-size);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &.right-shadow::after {
+    background: linear-gradient(to left, rgba(0,0,0,.3), transparent $base-font-size);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    right: 0;
+  }
+}
+
 .site-nav-links {
   font-size: 0;
   text-shadow: 0 0px 4px rgba(0, 0, 0, 0.55);
+  border-radius: $base-line-height;
+  white-space: nowrap;
+  overflow: auto;
 
   li {
     font-size: $base-font-size;
