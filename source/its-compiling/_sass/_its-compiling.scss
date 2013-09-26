@@ -281,10 +281,12 @@ table.highlight {
       color: darken(white, 40%);
       i {
         font-size: 1.75em;
+        margin-bottom: 0.1em;
       }
       span {
         display: block;
         font-size: 0.6em;
+        margin-top: 0.12em;
         @include hyphenation;
       }
     }
@@ -314,6 +316,7 @@ table.highlight {
       width: 6em;
       font-size: 1em;
       margin-left: -(6em - 3.5em) / 2;
+      margin-top: (0.12em / 0.6);
       @include transform(scale(0.6));
       @include transform-origin(50%, 0);
     }
