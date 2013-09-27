@@ -497,25 +497,37 @@ table.highlight {
         max-width: 100%;
       }
     }
-    .tags {
-      @include float-left;
-      width: 50%;
+    .tags, .metadata, .article-navigation {
       color: darken(white, 60%);
       font-size: 0.85em;
       line-height: 1.5;
+    }
+    .tags {
+      width: 50%;
+      @include float-left;
+
       li {
         margin-right: 0.5em;
       }
     }
     .metadata {
-      @include float-right;
       width: 50%;
-      color: darken(white, 60%);
-      font-size: 0.85em;
-      line-height: 1.5;
       text-align: right;
+      @include float-right;
+
       li + li {
         margin-left: 1em;
+      }
+    }
+    .article-navigation {
+      @extend .group;
+      margin: 40px 0 20px;
+
+      .article-prev {
+        @include float-left;
+      }
+      .article-next {
+        @include float-right;
       }
     }
     .social-share {
