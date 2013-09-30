@@ -47,7 +47,14 @@ body {
 		float: none;
 		margin-left: 0px;
 
+		p {
+			color: #999;
+			line-height: (20/14)*1em;
+			margin: 10px 0;
+		}
+
 		ul {
+
 			li {
 				margin-left: 0px;
 				display: block;
@@ -207,7 +214,7 @@ body {
 				color: $greyshade;
 			}
 			#sub-nav {
-				margin-top: 10px;
+				margin-top: 20px;
 				.search::before {
 				left: 10px;
 				}
