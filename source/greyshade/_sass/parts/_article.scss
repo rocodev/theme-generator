@@ -18,6 +18,8 @@ article{
 		}
 	}
 	.entry-content{
+		@include hyphenation;
+
 		line-height: (20/14) * 1em;
 		text-align: justify;
 		a{
