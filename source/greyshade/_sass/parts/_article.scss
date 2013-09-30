@@ -1,3 +1,11 @@
+@mixin hyphenation {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
 article{
 	border-bottom: 1px solid $color-gray04;
 	border-top: 1px solid $color-gray05;
@@ -18,10 +26,9 @@ article{
 		}
 	}
 	.entry-content{
-		@include hyphenation;
-
 		line-height: (20/14) * 1em;
 		text-align: justify;
+		@include hyphenation;
 		a{
 			&:hover{
 				text-decoration: underline;
