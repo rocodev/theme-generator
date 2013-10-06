@@ -98,7 +98,7 @@
   }
 
   // Embeded Media
-  iframe {
+  & > iframe {
     @extend %vertical-margin;
     max-width: 100%;
     display: block;
