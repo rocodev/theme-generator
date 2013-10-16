@@ -71,3 +71,17 @@
 		}
 	}
 }
+
+.category-list {
+	text-align: center;
+	margin: 20px auto;
+
+	select {
+		font-size: 115%;
+	}
+}
+.category-list + .archives .year {
+	&, &:before {
+		border-top: none;
+	}
+}
