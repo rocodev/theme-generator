@@ -273,6 +273,12 @@ body {
   @include leader(2, $h2-size);
 }
 
+.category-list {
+  float: right;
+  @include leader(-3, $post-font-size);
+  @include adjust-leading-to(2, $post-font-size);
+}
+
 .annual-archive {
   .archive-year {
     @include leader(1.5, $h3-size);
