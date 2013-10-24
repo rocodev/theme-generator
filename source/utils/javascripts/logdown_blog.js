@@ -20,13 +20,10 @@
   if (typeof document.querySelector == "undefined" || document.querySelector == null) return false;
 
   var categorySelect = document.querySelector('.category-dropdown'),
-      dropdownToggle, dropdownMenu;
+      dropdownToggle = categorySelect.querySelector('[role=button]'),
+      dropdownMenu = categorySelect.querySelector('[role=menu]');
 
-  if (typeof categorySelect == "undefined" || categorySelect == null) return false;
-
-  dropdownToggle = categorySelect.querySelector('[role=button]');
-  dropdownMenu = categorySelect.querySelector('[role=menu]');
-  dropdownMenu.style.height = dropdownMenu.scrollHeight + 'px';
+  if (typeof dropdownMenu == "undefined" || dropdownMenu == null) return false;
 
   dropdownMenu.classList.add('hidden');
 
