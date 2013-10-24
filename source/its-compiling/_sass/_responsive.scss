@@ -37,6 +37,9 @@
       text-align: center;
     }
   }
+  .category-dropdown [role=menu] {
+    font-size: 120%;
+  }
 }
 
 // iPhone in horizontal mode
@@ -100,6 +103,9 @@
   }
   body > iframe[src^="http://logdown"] {
     position: absolute !important;
+  }
+  .category-dropdown {
+    margin-top: 0.5em;
   }
 }
 

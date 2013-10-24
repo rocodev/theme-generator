@@ -27,6 +27,10 @@
 
   dropdownMenu.classList.add('hidden');
 
+  setTimeout(function() {
+    dropdownMenu.classList.add('fade');
+  },50)
+
   dropdownToggle.addEventListener('click', function(event) {
     dropdownMenu.classList.toggle('hidden');
     event.preventDefault();
