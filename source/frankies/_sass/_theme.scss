@@ -288,7 +288,10 @@ body {
     border-radius: 3px;
     box-shadow: 0 3px 3px rgba(0,0,0,.5);
     opacity: 1;
-    @include transition(opacity 150ms);
+
+    &.fade {
+      @include transition(opacity 150ms);
+    }
 
     &.hidden {
       opacity: 0;
