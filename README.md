@@ -10,10 +10,46 @@ $ bundle install
 
 copy config.example.yml to config.yml, and edit the keys.
 
-```
+``` yml
 s3_id: xxx
 s3_secret: xxx
 s3_bucket: cdn-theme.logdown.io
+```
+
+Then you should init git submodules if you did not clone recursively:
+
+``` bash
+git submodule init
+```
+
+## Submodule
+
+Theme generator now uses `git submodule` to manage theme source files. The `source/` directory is now a submodule pointed to [logdown/themes][1], thus need to be commit / update individually.
+
+### Commit theme changes
+
+```bash
+$ cd source
+$ git add .
+$ git commit -m "Update theme files"
+$ git push origin master
+```
+
+This will push your mods back to [logdown/themes][1].
+
+### Update theme files
+
+If the [logdown/themes][1] has been updated (e.g. just merged a pull request,) you'll have to *update* this submodule.
+
+```bash
+$ git submodule update
+```
+
+Or go to `source/` first and do `git pull` within it:
+
+```bash
+$ cd source
+$ git pull origin master
 ```
 
 ## Working flow
@@ -52,8 +88,6 @@ If you have `scss` file like `screen.scss` put it to the `_sass` folder: `./sour
 and in the next step it will compiled to `./public/your_theme/stylesheets/screen.css`.
 
 
-
-
 ### Step3. Compile source to public
 
 Generate theme form source is quite simple, just type:
@@ -74,8 +108,13 @@ $ powder open
 Open your browser and type the url: `http://theme_generator.dev/your_theme/stylesheets/your_css_name.css`,
 then you can see the compiled css file.
 
+### Step5. Update source submodule
 
-### Step5. Deploy
+Since the `source/` folder is now a submodule of [logdown/themes][1], you should commit and push any changes in the folder to its own repository.
+
+You'll need to commit the new “HEAD position of submodule” so to ensure we get the correct commit of themes.
+
+### Step6. Deploy
 
 Before deploy, remember to commit and push it to master.
 
@@ -97,7 +136,7 @@ REMEMBER to edit index.liquid to using the url.
 .
 ├── _deploy    # For github deploy, don't directly edit it.
 ├── public    # For pow preview, don't directly edit it.
-├── source
+├── source # Submodule from logdown/themes
     ├── your_theme
         ├── font
         ├── images
@@ -106,3 +145,5 @@ REMEMBER to edit index.liquid to using the url.
         ├── _sass    # Placing your sass file here, will compiling to public/your_theme/stylesheets
         ├── index.liquid
 ```
+
+[1]: https://github.com/logdown/themes
